@@ -1,9 +1,10 @@
+import "dotenv/config";
 import express from "express";
 import { matchesRouter } from "./routes/matches.js";
 import morgan from "morgan";
 
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT ?? 8080;
 
 app.use(express.json());
 app.use(morgan("dev"));
